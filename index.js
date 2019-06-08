@@ -22,6 +22,11 @@ module.exports = class JimKickoff {
 			process.exit(1);
 		}
 
+		if (this.jim.params.length > 1) {
+			this.targetDirectory = this.jim.params[1];
+		} else {
+			this.targetDirectory = '.';
+		}
 		this.config = this.jim.workflow[this.jim.params[0]];
 	}
 
@@ -31,7 +36,7 @@ module.exports = class JimKickoff {
 	async run() {
 		this.jim.Logger.info(`Kicking off ${this.jim.params[0]}`);
 		this.jim.Logger.info(`Using "${this.config.repo}" as a template`);
-		await exec(`git clone ${this.config.repo}`);
+		await exec(`git clone ${this.config.repo} ${this.targetDirectory}`);
 		this.jim.Logger.success('Template cloned succesfully');
 		rimraf.sync('.git');
 		this.jim.Logger.success('Removed old git');
