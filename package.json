@@ -1,6 +1,6 @@
 {
 	"name": "@jimcli/jim-workflow-kickoff",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "A jim-workflow that kickstarts new project with a git template",
 	"main": "index.js",
 	"scripts": {
