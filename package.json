@@ -36,6 +36,6 @@
 	},
 	"dependencies": {
 		"await-exec": "^0.1.2",
-		"rimraf": "^2.6.3"
+		"rimraf": "^3.0.0"
 	}
 }
